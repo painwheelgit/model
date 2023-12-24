@@ -49,6 +49,10 @@ with open(filename, 'w', encoding='utf-8') as file:
     file.write(
         '{\n\t"data": [\n' + ',\n'.join('\t\t' + json.dumps(i) for i in payload["data"]) + '\n\t]\n}'
     )
+
+ax = plt.gca()
 plt.plot(freq / 10e6, sigma)
+ax.set_ylabel('ЭПР, м^2')
+ax.set_xlabel('f, МГц')
 plt.grid()
 plt.show()
